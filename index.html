@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>هوم‌لند شیراز | فروشگاه لوازم خانگی با ضمانت اصالت</title>
+  <meta name="description" content="هوم‌لند، فروشگاه تخصصی لوازم خانگی در شیراز؛ یخچال، ماشین لباسشویی، ظرفشویی و لوازم آشپزخانه با ضمانت اصالت، نصب رایگان و خرید اقساطی." />
+
+  <!-- فونت وزیرمتن -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS (CDN) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            background: "oklch(0.978 0.008 85)",
+            foreground: "oklch(0.24 0.015 60)",
+            card: "oklch(0.992 0.005 85)",
+            primary: "oklch(0.28 0.02 55)",
+            "primary-foreground": "oklch(0.978 0.008 85)",
+            secondary: "oklch(0.945 0.016 82)",
+            muted: "oklch(0.945 0.016 82)",
+            "muted-foreground": "oklch(0.52 0.02 62)",
+            border: "oklch(0.905 0.017 82)",
+            sand: "oklch(0.925 0.024 80)",
+            clay: "oklch(0.53 0.075 55)",
+          },
+          fontFamily: {
+            sans: ["Vazirmatn", "ui-sans-serif", "system-ui", "sans-serif"],
+            display: ["Vazirmatn", "ui-sans-serif", "system-ui", "sans-serif"],
+          },
+          spacing: { 18: "4.5rem" },
+          boxShadow: {
+            soft: "0 1px 2px oklch(0.3 0.02 60 / 0.04), 0 24px 60px -32px oklch(0.3 0.02 60 / 0.28)",
+            lift: "0 2px 4px oklch(0.3 0.02 60 / 0.05), 0 40px 90px -40px oklch(0.3 0.02 60 / 0.35)",
+          },
+        },
+      },
+    };
+  </script>
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body class="bg-background text-foreground font-sans antialiased">
+
+  <!-- ===== Header ===== -->
+  <header id="site-header" class="sticky top-0 z-50 border-b border-border/60 bg-background/85 backdrop-blur-xl transition-shadow duration-300">
+    <div class="mx-auto flex h-16 max-w-6xl items-center justify-between px-6 md:px-10">
+      <a href="#top" class="font-display text-xl font-bold tracking-tight">
+        هوم‌لند
+        <span class="mr-2 text-sm font-normal text-muted-foreground">شیراز</span>
+      </a>
+
+      <nav class="hidden items-center gap-8 text-sm text-muted-foreground md:flex">
+        <a class="transition-colors hover:text-foreground" href="#products">محصولات</a>
+        <a class="transition-colors hover:text-foreground" href="#bundles">پکیج‌ها</a>
+        <a class="transition-colors hover:text-foreground" href="#why">چرا هوم‌لند</a>
+        <a class="transition-colors hover:text-foreground" href="#faq">سوالات متداول</a>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <a href="tel:+987136271010"
+           class="rounded-full bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground transition-transform duration-300 hover:-translate-y-0.5">
+          مشاوره و خرید
+        </a>
+        <!-- دکمه منوی موبایل -->
+        <button id="menu-btn" aria-label="باز کردن منو" class="flex h-10 w-10 items-center justify-center rounded-full border border-border md:hidden">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/>
+          </svg>
+        </button>
+        <button id="btnnn" onclick="DL()">DARK/LIGHT</button>
+      </div>
+    </div>
+
+    <!-- منوی موبایل -->
+    <nav id="mobile-menu" class="hidden border-t border-border bg-background px-6 py-4 md:hidden">
+      <div class="flex flex-col gap-4 text-sm text-muted-foreground">
+        <a class="hover:text-foreground" href="#products">محصولات</a>
+        <a class="hover:text-foreground" href="#bundles">پکیج‌ها</a>
+        <a class="hover:text-foreground" href="#why">چرا هوم‌لند</a>
+        <a class="hover:text-foreground" href="#faq">سوالات متداول</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="top">
+
+    <!-- ===== Hero ===== -->
+    <section class="mx-auto max-w-6xl px-6 pt-16 pb-14 md:px-10 md:pt-28 md:pb-20">
+      <p class="rise text-sm tracking-[0.18em] text-muted-foreground">
+        فروشگاه لوازم خانگی · شیراز، بلوار معالی‌آباد
+      </p>
+
+      <h1 class="rise mt-7 max-w-3xl font-display text-[2.5rem] font-bold leading-[1.25] tracking-tight md:text-[4.25rem] md:leading-[1.15]"
+          style="animation-delay: 90ms">
+        لوازم خانگی <span class="text-clay">اصل</span>، با قیمت منصفانه و نصب در همان روز.
+      </h1>
+
+      <p class="rise mt-7 max-w-xl text-lg leading-loose text-muted-foreground" style="animation-delay: 170ms">
+        هجده سال است در شیراز یخچال، لباسشویی و لوازم آشپزخانه می‌فروشیم؛ با فاکتور رسمی،
+        گارانتی شرکتی، ارسال و نصب رایگان و امکان خرید اقساطی بدون ضامن.
+      </p>
+
+      <div class="rise mt-9 flex flex-wrap items-center gap-4" style="animation-delay: 250ms">
+        <a href="tel:+987136271010"
+           class="rounded-full bg-primary px-7 py-3.5 text-sm font-medium text-primary-foreground shadow-soft transition-transform duration-300 hover:-translate-y-0.5">
+          تماس و استعلام قیمت
+        </a>
+        <a href="#bundles"
+           class="rounded-full border border-border px-7 py-3.5 text-sm font-medium transition-colors hover:bg-secondary">
+          مشاهده پکیج جهیزیه
+        </a>
+      </div>
+
+      <figure class="rise mt-14 overflow-hidden rounded-3xl shadow-lift md:mt-18" style="animation-delay: 330ms">
+        <img src="assets/hero-appliances.jpg" width="1600" height="1104"
+             alt="نمای داخلی فروشگاه لوازم خانگی هوم‌لند با یخچال، فر توکار و ماشین لباسشویی"
+             class="h-[56vw] max-h-[600px] w-full object-cover md:h-auto" />
+      </figure>
+
+      <dl class="mt-14 grid grid-cols-2 gap-y-10 border-t border-border pt-10 md:grid-cols-4">
+        <div>
+          <dt class="font-display text-3xl font-bold md:text-4xl">۱۸</dt>
+          <dd class="mt-2 text-sm leading-relaxed text-muted-foreground">سال سابقه در بازار شیراز</dd>
+        </div>
+        <div>
+          <dt class="font-display text-3xl font-bold md:text-4xl">۳۲ هزار</dt>
+          <dd class="mt-2 text-sm leading-relaxed text-muted-foreground">خانواده مشتری</dd>
+        </div>
+        <div>
+          <dt class="font-display text-3xl font-bold md:text-4xl">۲۴ ساعت</dt>
+          <dd class="mt-2 text-sm leading-relaxed text-muted-foreground">ارسال و نصب در شیراز</dd>
+        </div>
+        <div>
+          <dt class="font-display text-3xl font-bold md:text-4xl">۱۰۰٪</dt>
+          <dd class="mt-2 text-sm leading-relaxed text-muted-foreground">ضمانت اصالت کالا</dd>
+        </div>
+      </dl>
+    </section>
+
+    <!-- ===== چرا هوم‌لند ===== -->
+    <section id="why" class="border-y border-border bg-secondary/60">
+      <div class="mx-auto grid max-w-6xl gap-12 px-6 py-18 md:grid-cols-3 md:px-10 md:py-24">
+        <div class="reveal">
+          <h3 class="font-display text-xl font-semibold leading-relaxed">فقط کالای اصل، با فاکتور رسمی</h3>
+          <p class="mt-4 text-[15px] leading-loose text-muted-foreground">
+            هر دستگاه با کارت گارانتی شرکتی و فاکتور رسمی تحویل می‌شود؛ بدون کالای دست دوم یا بازسازی‌شده.
+          </p>
+        </div>
+        <div class="reveal">
+          <h3 class="font-display text-xl font-semibold leading-relaxed">ارسال و نصب رایگان در شیراز</h3>
+          <p class="mt-4 text-[15px] leading-loose text-muted-foreground">
+            سفارش تا ساعت ۱۴، همان روز در سطح شهر شیراز ارسال و توسط تکنسین خودمان نصب و راه‌اندازی می‌شود.
+          </p>
+        </div>
+        <div class="reveal">
+          <h3 class="font-display text-xl font-semibold leading-relaxed">خرید اقساطی بدون ضامن</h3>
+          <p class="mt-4 text-[15px] leading-loose text-muted-foreground">
+            طرح اقساط ۶ تا ۱۸ ماهه با چک یا کارت اعتباری؛ تعیین تکلیف پرونده در کمتر از یک روز کاری.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== محصولات ===== -->
+    <section id="products" class="mx-auto max-w-6xl px-6 py-18 md:px-10 md:py-28">
+      <div class="max-w-2xl reveal">
+        <p class="text-sm tracking-[0.18em] text-muted-foreground">دسته‌بندی کالا</p>
+        <h2 class="mt-5 font-display text-3xl font-bold leading-snug tracking-tight md:text-5xl">
+          هرچه خانه لازم دارد، زیر یک سقف.
+        </h2>
+      </div>
+
+      <div class="mt-12 grid gap-5 md:mt-16 md:grid-cols-2">
+        <article class="reveal group rounded-3xl border border-border bg-card p-8 transition-all duration-500 hover:-translate-y-1 hover:shadow-lift md:p-10">
+          <div class="flex items-baseline justify-between">
+            <span class="font-display text-sm text-clay">۰۱</span>
+            <span class="text-xs tracking-wide text-muted-foreground">بیش از ۹۰ مدل موجود</span>
+          </div>
+          <h3 class="mt-7 font-display text-2xl font-semibold tracking-tight">یخچال و فریزر</h3>
+          <p class="mt-4 text-[15px] leading-loose text-muted-foreground">
+            ساید بای ساید، دوقلو و کمبی از برندهای امرسان، اسنوا، جی‌پلاس و بوش؛ با مشاوره ابعاد و جاگذاری قبل از خرید.
+          </p>
+        </article>
+
+        <article class="reveal group rounded-3xl border border-border bg-card p-8 transition-all duration-500 hover:-translate-y-1 hover:shadow-lift md:p-10">
+          <div class="flex items-baseline justify-between">
+            <span class="font-display text-sm text-clay">۰۲</span>
+            <span class="text-xs tracking-wide text-muted-foreground">نصب رایگان</span>
+          </div>
+          <h3 class="mt-7 font-display text-2xl font-semibold tracking-tight">ماشین لباسشویی و ظرفشویی</h3>
+          <p class="mt-4 text-[15px] leading-loose text-muted-foreground">
+            ظرفیت‌های ۷ تا ۱۲ کیلو و ظرفشویی ۱۲ تا ۱۵ نفره، همراه با نصب تخصصی و آموزش کار با دستگاه در محل.
+          </p>
+        </article>
+
+        <article class="reveal group rounded-3xl border border-border bg-card p-8 transition-all duration-500 hover:-translate-y-1 hover:shadow-lift md:p-10">
+          <div class="flex items-baseline justify-between">
+            <span class="font-display text-sm text-clay">۰۳</span>
+            <span class="text-xs tracking-wide text-muted-foreground">ست هماهنگ</span>
+          </div>
+          <h3 class="mt-7 font-display text-2xl font-semibold tracking-tight">آشپزخانه و پکیج کامل</h3>
+          <p class="mt-4 text-[15px] leading-loose text-muted-foreground">
+            گاز صفحه‌ای، فر توکار، هود و سینک؛ چیدمان هماهنگ برای کابینت شما با بازدید رایگان کارشناس.
+          </p>
+        </article>
+
+        <article class="reveal group rounded-3xl border border-border bg-card p-8 transition-all duration-500 hover:-translate-y-1 hover:shadow-lift md:p-10">
+          <div class="flex items-baseline justify-between">
+            <span class="font-display text-sm text-clay">۰۴</span>
+            <span class="text-xs tracking-wide text-muted-foreground">تحویل فوری</span>
+          </div>
+          <h3 class="mt-7 font-display text-2xl font-semibold tracking-tight">لوازم برقی کوچک</h3>
+          <p class="mt-4 text-[15px] leading-loose text-muted-foreground">
+            جاروبرقی، اتو، مایکروویو، آبمیوه‌گیری و چای‌ساز؛ همه با گارانتی معتبر شرکتی و فاکتور رسمی.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== پکیج‌ها ===== -->
+    <section id="bundles" class="border-y border-border bg-sand/50">
+      <div class="mx-auto max-w-6xl px-6 py-18 md:px-10 md:py-24">
+        <h2 class="font-display text-3xl font-bold tracking-tight md:text-4xl reveal">پکیج‌های پرفروش</h2>
+        <p class="mt-4 max-w-xl text-[15px] leading-loose text-muted-foreground reveal">
+          قیمت‌ها بسته به برند و مدل انتخابی تغییر می‌کند؛ کارشناس ما پکیج را دقیقاً متناسب با بودجه شما می‌بندد.
+        </p>
+
+        <ul class="mt-10 divide-y divide-border border-y border-border">
+          <li class="group flex flex-wrap items-baseline justify-between gap-3 py-7 transition-[padding] duration-500 hover:pr-3">
+            <span class="font-display text-xl font-semibold md:text-2xl">پکیج جهیزیه کامل</span>
+            <span class="text-sm leading-relaxed text-muted-foreground">یخچال ساید، لباسشویی، ظرفشویی، گاز، هود و مایکروویو</span>
+            <span class="text-sm font-medium text-clay">از ۳۸۵ میلیون تومان</span>
+          </li>
+          <li class="group flex flex-wrap items-baseline justify-between gap-3 py-7 transition-[padding] duration-500 hover:pr-3">
+            <span class="font-display text-xl font-semibold md:text-2xl">پکیج آشپزخانه توکار</span>
+            <span class="text-sm leading-relaxed text-muted-foreground">فر توکار، گاز صفحه‌ای، هود شومینه‌ای و سینک استیل</span>
+            <span class="text-sm font-medium text-clay">از ۹۸ میلیون تومان</span>
+          </li>
+          <li class="group flex flex-wrap items-baseline justify-between gap-3 py-7 transition-[padding] duration-500 hover:pr-3">
+            <span class="font-display text-xl font-semibold md:text-2xl">پکیج خانه مجردی</span>
+            <span class="text-sm leading-relaxed text-muted-foreground">یخچال کمبی، لباسشویی ۷ کیلو، مایکروویو و جاروبرقی</span>
+            <span class="text-sm font-medium text-clay">از ۱۴۵ میلیون تومان</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===== نظرات مشتریان ===== -->
+    <section class="mx-auto max-w-6xl px-6 py-18 md:px-10 md:py-28">
+      <div class="grid gap-6 md:grid-cols-2">
+        <figure class="reveal rounded-3xl border border-border bg-card p-9 shadow-soft md:p-12">
+          <blockquote class="font-display text-xl leading-loose md:text-2xl md:leading-[2]">
+            «برای جهیزیه دخترم کل پکیج را از هوم‌لند گرفتم. صبح سفارش دادم، عصر همان روز آوردند و نصب کردند. برخوردشان واقعاً محترمانه بود.»
+          </blockquote>
+          <figcaption class="mt-8 text-sm text-muted-foreground">
+            <span class="text-foreground">فاطمه رضایی</span> · معالی‌آباد، شیراز
+          </figcaption>
+        </figure>
+
+        <figure class="reveal rounded-3xl border border-border bg-card p-9 shadow-soft md:p-12">
+          <blockquote class="font-display text-xl leading-loose md:text-2xl md:leading-[2]">
+            «ماشین ظرفشویی بعد از هشت ماه ایراد پیدا کرد؛ بدون هیچ بحثی تکنسین فرستادند و رایگان درستش کردند. همین باعث شد یخچالم را هم از خودشان بخرم.»
+          </blockquote>
+          <figcaption class="mt-8 text-sm text-muted-foreground">
+            <span class="text-foreground">امیرحسین کشاورز</span> · قصردشت، شیراز
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ===== سوالات متداول ===== -->
+    <section id="faq" class="border-t border-border">
+      <div class="mx-auto grid max-w-6xl gap-12 px-6 py-18 md:grid-cols-[0.8fr_1.2fr] md:px-10 md:py-24">
+        <h2 class="font-display text-3xl font-bold leading-snug tracking-tight md:text-4xl reveal">
+          سوال‌هایی که بیشتر<br />از ما می‌پرسند.
+        </h2>
+
+        <div class="divide-y divide-border border-y border-border">
+          <details class="group py-6">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-6 text-lg">
+              هزینه ارسال و نصب چقدر است؟
+              <span class="text-clay transition-transform duration-300 group-open:rotate-45">+</span>
+            </summary>
+            <p class="mt-4 max-w-xl text-[15px] leading-loose text-muted-foreground">
+              در محدوده شهر شیراز ارسال و نصب لوازم بزرگ کاملاً رایگان است. برای شهرستان‌های استان فارس، هزینه ارسال با باربری محاسبه و پیش از ارسال به شما اعلام می‌شود.
+            </p>
+          </details>
+
+          <details class="group py-6">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-6 text-lg">
+              شرایط خرید اقساطی چیست؟
+              <span class="text-clay transition-transform duration-300 group-open:rotate-45">+</span>
+            </summary>
+            <p class="mt-4 max-w-xl text-[15px] leading-loose text-muted-foreground">
+              با ارائه کارت ملی، فیش حقوقی یا جواز کسب می‌توانید از طرح ۶ تا ۱۸ ماهه استفاده کنید. پیش‌پرداخت از ۳۰ درصد شروع می‌شود و پرونده معمولاً کمتر از ۲۴ ساعت بررسی می‌شود.
+            </p>
+          </details>
+
+          <details class="group py-6">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-6 text-lg">
+              گارانتی کالاها چگونه است؟
+              <span class="text-clay transition-transform duration-300 group-open:rotate-45">+</span>
+            </summary>
+            <p class="mt-4 max-w-xl text-[15px] leading-loose text-muted-foreground">
+              همه کالاها دارای گارانتی رسمی شرکت سازنده هستند و علاوه بر آن، هوم‌لند تا یک سال پشتیبانی نصب و تنظیم رایگان ارائه می‌دهد.
+            </p>
+          </details>
+
+          <details class="group py-6">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-6 text-lg">
+              امکان مرجوعی یا تعویض وجود دارد؟
+              <span class="text-clay transition-transform duration-300 group-open:rotate-45">+</span>
+            </summary>
+            <p class="mt-4 max-w-xl text-[15px] leading-loose text-muted-foreground">
+              تا ۷ روز پس از خرید، در صورت سالم بودن کارتن و لوازم جانبی، کالا تعویض یا مرجوع می‌شود. ایراد فنی در روز اول با دستگاه نو تعویض می‌گردد.
+            </p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CTA ===== -->
+    <section id="contact" class="px-6 pb-18 md:px-10 md:pb-24">
+      <div class="mx-auto max-w-6xl rounded-3xl bg-primary px-8 py-14 text-primary-foreground shadow-lift md:px-16 md:py-20">
+        <div class="max-w-2xl">
+          <h2 class="font-display text-3xl font-bold leading-snug tracking-tight md:text-5xl md:leading-tight">
+            قیمت امروز را همین حالا بپرسید.
+          </h2>
+          <p class="mt-6 text-lg leading-loose text-primary-foreground/70">
+            لیست خریدتان را بگویید تا در کمتر از ۱۰ دقیقه بهترین قیمت، موجودی و شرایط اقساط را برایتان بفرستیم. مشاوره کاملاً رایگان است.
+          </p>
+          <div class="mt-9 flex flex-wrap gap-4">
+            <a href="tel:+987136271010"
+               class="rounded-full bg-background px-7 py-3.5 text-sm font-medium text-foreground transition-transform duration-300 hover:-translate-y-0.5">
+              ۰۷۱-۳۶۲۷۱۰۱۰
+            </a>
+            <a href="https://wa.me/989171234567"
+               class="rounded-full border border-primary-foreground/25 px-7 py-3.5 text-sm font-medium transition-colors hover:bg-primary-foreground/10">
+              ارسال لیست در واتساپ
+            </a>
+          </div>
+          <p class="mt-8 text-sm text-primary-foreground/50">همه روزه ۹ صبح تا ۹ شب · جمعه‌ها ۱۰ تا ۱۴</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="border-t border-border">
+    <div class="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 px-6 py-10 text-sm text-muted-foreground md:px-10">
+      <span class="font-display text-lg font-bold text-foreground">هوم‌لند</span>
+      <span>شیراز، بلوار معالی‌آباد، نبش کوچه ۱۲</span>
+      <span>© ۱۴۰۵ فروشگاه لوازم خانگی هوم‌لند</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+/* ============================================
+   هوم‌لند شیراز — استایل‌های سفارشی
+   (مکمل Tailwind CDN)
+   ============================================ */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* --- انیمیشن ورود در بارگذاری (Hero) --- */
+.rise {
+  opacity: 0;
+  transform: translateY(18px);
+  animation: rise-in 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes rise-in {
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* --- انیمیشن ظاهر شدن هنگام اسکرول --- */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* --- آیکون + در سوالات متداول: حذف مارکر پیش‌فرض --- */
+summary::-webkit-details-marker {
+  display: none;
+}
+
+summary::marker {
+  display: none;
+  content: "";
+}
+
+/* --- سایه هدر هنگام اسکرول (با JS فعال می‌شود) --- */
+#site-header.is-scrolled {
+  box-shadow: 0 1px 2px oklch(0.3 0.02 60 / 0.04),
+              0 12px 32px -20px oklch(0.3 0.02 60 / 0.25);
+}
+
+/* --- کاهش حرکت برای کاربرانی که ترجیح می‌دهند --- */
+@media (prefers-reduced-motion: reduce) {
+  .rise,
+  .reveal {
+    animation: none;
+    transition: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+}
+.dark{
+    background-color: #000;
+    color: #fff;
+}
+.light{
+    background-color: #fff;
+    color: #000;
+}
+
+#btnnn{
+  background-color: rgb(15, 153, 15);
+  color: white;
+  border-radius: 20px;
+  padding: 10px;
+  
+
+}
+#btnnn:hover{
+box-shadow: 0 0 20px 5px black;
+}
